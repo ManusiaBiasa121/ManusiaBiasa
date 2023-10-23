@@ -36,6 +36,8 @@
           <div class="content-wrapper">
           <a type="button" class="btn btn-success btn-icon-text" href="form_agama.php">
                             <i class="mdi mdi-upload btn-icon-prepend"></i> Upload Data </a>
+          <a type="button" class="btn btn-info btn-icon-text"  href="laporan/laporan_agama.php"> Cetak Data <i class="mdi mdi-printer btn-icon-append"></i>
+          </a>
           <table id="example" class="table table-striped" style="width:100%">
             <thead>
                 <tr>

@@ -302,7 +302,7 @@
                       <div class="col-md-6">
                         <h4 class="card-title">Button with text and icon</h4>
                         <p class="card-description">Wrap icon and text inside <code>.btn-icon-text</code> and use <code>.btn-icon-prepend</code> or <code>.btn-icon-append</code> for icon tags</p>
-                        <div class="template-demo">
+                        <div class="template-demo">f
                           <button type="button" class="btn btn-primary btn-icon-text">
                             <i class="mdi mdi-file-check btn-icon-prepend"></i> Submit </button>
                           <button type="button" class="btn btn-dark btn-icon-text"> Edit <i class="mdi mdi-file-check btn-icon-append"></i>
@@ -313,8 +313,8 @@
                         <div class="template-demo">
                           <a type="button" class="btn btn-danger btn-icon-text" href="blank-page.php">
                             <i class="mdi mdi-upload btn-icon-prepend"></i> Upload </a>
-                          <button type="button" class="btn btn-info btn-icon-text"> Print <i class="mdi mdi-printer btn-icon-append"></i>
-                          </button>
+                          <a type="button" class="btn btn-info btn-icon-text"  href=""> Print <i class="mdi mdi-printer btn-icon-append"></i>
+                          </a>
                           <button type="button" class="btn btn-warning btn-icon-text">
                             <i class="mdi mdi-reload btn-icon-prepend"></i> Reset </button>
                         </div>
