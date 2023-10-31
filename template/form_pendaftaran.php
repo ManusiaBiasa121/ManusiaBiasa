@@ -164,7 +164,7 @@
                     <div class="form-group">
                       <label>kelas</label>
                       <select class="js-example-basic-single" style="width:100%" name="kelas" id="kelas">
-                      <option disabled selected>Pilih kelas</option>
+                      <option disabled selected>Pilih Kelas</option>
                       <?php
                       $sql = mysqli_query($conn, "SELECT jurusan.id_jurusan, CONCAT(jenjang.nama_jenjang,' ',jurusan.nama_jurusan) AS kelas FROM jurusan INNER JOIN jenjang ON jurusan.id_jenjang = jenjang.id_jenjang");
                       while ($data = mysqli_fetch_assoc($sql)) {
@@ -175,23 +175,19 @@
                       ?>
                       </select>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputName1">Tanggal Input</label>
-                        <input type="date" name="tgl_input" class="form-control" id="tgl_input" placeholder="Tanggal Input">
-                      </div>
                       <div class="form-group">
                         <label for="exampleInputName1">User Input</label>
-                        <input type="text" name="user_input" class="form-control" id="user_input" placeholder="user_Input">
+                        <input type="text" name="user_input" class="form-control" id="user_input" placeholder="User_Input">
                       </div>
                       <div class="form-group">
                       <label>Pilih Akses User</label>
                       <select class="js-example-basic-single" style="width:100%" name="id_user" id="id_user">
                       <option disabled selected>Pilih Hak Akses</option>
                       <?php
-                      $sql = mysqli_query($conn, "SELECT * FROM user WHERE hak_akses = '$status' AND id_user='$_SESSION[id_user];'");
+                      $sql = mysqli_query($conn, "SELECT * FROM user WHERE akses = '$status' AND id_user='$_SESSION[id_user];'");
                       while ($data = mysqli_fetch_assoc($sql)) {
                       ?>
-                          <option value="<?= $data['id_user'] ?>"><?= $data['hak_akses'] ?> (<?= $data['nama'] ?>)</option>
+                          <option value="<?= $data['id_user'] ?>"><?= $data['akses'] ?> (<?= $data['nama'] ?>)</option>
                       <?php
                       }
                       ?>
