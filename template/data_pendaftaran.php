@@ -83,14 +83,15 @@
 <tfoot>
 <tr>
     <th>No</th>
+    <th>NIS</th>
+    <th>Nama Siswa</th>
     <th>Kelas</th>
-    <th>Tgl Input</th>
-    <th>User Input</th>
-    <th>Tgl Update</th>
-    <th>User Update</th>
-    <th>Akses</th>
+    <th>Alamat</th>
+    <th>Jenis Kelamin</th>
+    <th>Detail</th>
     <th>Update</th>
     <th>Delete</th>
+    <th>Cetak</th>
 </tr>
 </tfoot>
             </table>
