@@ -75,7 +75,7 @@
                     <td><?= $data['alamat']; ?></td>
                     <td><?= $data['jenis_kelamin']; ?></td>
                     <!-- <td align="center"><a class="btn btn-primary" type="button" name="view" value="View" data-id="<?php echo $data["nis"]; ?>" class="btn btn-info btn-xs view_data"><i class="fa fa-bars"></i></a></td> -->
-                    <td align="center"><a data-toggle="modal" data-target="#detailDaftar" data-id="<?= $data['nis']; ?>" type="submit" class="mdi mdi-arrow-expand Detail_Pendaftaran">view</a></td>
+                    <td align="center"><a data-toggle="modal" data-target="#detailDaftar" data-id="<?= $data['nis']; ?>" type="submit" class="mdi mdi-arrow-expand Detai_Pendaftaran">view</a></td>
                     <td align="center"><a class="mdi mdi-table-edit" style="color: #1abf18" type="button" href="edit_pendaftaran.php?nis=<?= $data['nis']; ?>"><i class="fa fa-pencil-square-o"></i></a></td>
                     <td align="center"><a class="mdi mdi-backspace" style="color: #ab0d0d" type="button" onclick="return confirm('Data akan di Hapus?')" href="hapus_pendaftaran.php?nis=<?= $data['nis']; ?>"><i class="fa fa-trash-o"></i></a></td>
                     <td align="center"> <a href="cetak_surat/surat.php?nis=<?= $data['nis']; ?>" target="_blank" type="button" name="cetak" class="mdi mdi-printer" style="color: #00B6FF" data-dismiss="modal"><i class="fa fa-print" aria-hidden="true"></i></a></td>
@@ -114,91 +114,91 @@
                         <div class="form-group row">
                             <label for="nis" class="col-md-2 col-form-label col-form-label-sm">NIS</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="nis" id="nis" readonly>
+                                <input type="text" class="form-control form-control-sm" name="nis" id="nis" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="nama_siswa" class="col-md-2 col-form-label col-form-label-sm">Nama Siswa</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="nama_siswa" id="nama_siswa" readonly>
+                                <input type="text" class="form-control form-control-sm" name="nama_siswa" id="nama_siswa" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="alamat" class="col-md-2 col-form-label col-form-label-sm">Alamat</label>
                             <div class="col-md-9">
-                                <textarea type="text" class="form-control form-control-sm" name="alamat" id="alamat" readonly></textarea>
+                                <textarea type="text" class="form-control form-control-sm" name="alamat" id="alamat" ></textarea>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="jenis_kelamin" class="col-md-2 col-form-label col-form-label-sm">Jenis Kelamin</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="jenis_kelamin" id="jenis_kelamin" readonly>
+                                <input type="text" class="form-control form-control-sm" name="jenis_kelamin" id="jenis_kelamin" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="tempat_lahir" class="col-md-2 col-form-label col-form-label-sm">Tempat Lahir</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="tempat_lahir" id="tempat_lahir" readonly>
+                                <input type="text" class="form-control form-control-sm" name="tempat_lahir" id="tempat_lahir" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="tgl_lahir" class="col-md-2 col-form-label col-form-label-sm">Tanggal Lahir</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="tgl_lahir" id="tgl_lahir" readonly>
+                                <input type="text" class="form-control form-control-sm" name="tgl_lahir" id="tgl_lahir" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="status" class="col-md-2 col-form-label col-form-label-sm">Agama</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="agama" id="agama" readonly>
+                                <input type="text" class="form-control form-control-sm" name="agama" id="agama" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="status" class="col-md-2 col-form-label col-form-label-sm">Status</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="status" id="status" readonly>
+                                <input type="text" class="form-control form-control-sm" name="status" id="status" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="nama_negara" class="col-md-2 col-form-label col-form-label-sm">Nama Negara</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="nama_negara" id="nama_negara" readonly>
+                                <input type="text" class="form-control form-control-sm" name="nama_negara" id="nama_negara" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="kelas" class="col-md-2 col-form-label col-form-label-sm">Kelas</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="kelas" id="kelas" readonly>
+                                <input type="text" class="form-control form-control-sm" name="kelas" id="kelas" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="tgl_input" class="col-md-2 col-form-label col-form-label-sm">Tanggal Input</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="tgl_input" id="tgl_input" readonly>
+                                <input type="text" class="form-control form-control-sm" name="tgl_input" id="tgl_input" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="user_input" class="col-md-2 col-form-label col-form-label-sm">User Input</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="user_input" id="user_input" readonly>
+                                <input type="text" class="form-control form-control-sm" name="user_input" id="user_input" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="tgl_update" class="col-md-2 col-form-label col-form-label-sm">Tanggal Update</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="tgl_update" id="tgl_update" readonly>
+                                <input type="text" class="form-control form-control-sm" name="tgl_update" id="tgl_update" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="user_update" class="col-md-2 col-form-label col-form-label-sm">Tanggal Update</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="user_update" id="user_update" readonly>
+                                <input type="text" class="form-control form-control-sm" name="user_update" id="user_update" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="akses" class="col-md-2 col-form-label col-form-label-sm">Akses</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" name="akses" id="akses" readonly>
+                                <input type="text" class="form-control form-control-sm" name="akses" id="akses" >
                             </div>
                         </div>
 
