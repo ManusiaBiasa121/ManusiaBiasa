@@ -82,11 +82,7 @@
                         ";
                 }
             }
-            
-            $data = mysqli_query($conn, "SELECT *
-            FROM jurusan
-            LEFT JOIN user
-            ON jurusan.id_user = user.id_user LEFT JOIN jenjang ON jurusan.id_jenjang = jenjang.id_jenjang WHERE id_jurusan='" . $_GET['id_jurusan'] . "'");
+            $data = mysqli_query($conn, "SELECT pendaftaran.nis,pendaftaran.nama_siswa,pendaftaran.alamat,pendaftaran.jenis_kelamin,pendaftaran.tempat_lahir,pendaftaran.tgl_lahir,pendaftaran.status,kewarganegaraan.id_negara,kewarganegaraan.nama_negara,agama.id_agama,agama.nama_agama,jurusan.id_jurusan, CONCAT(jenjang.nama_jenjang,' ',jurusan.nama_jurusan) as kelas, pendaftaran.tgl_input,pendaftaran.user_input,pendaftaran.tgl_update,pendaftaran.user_update, user.id_user,CONCAT(user.akses,' (',user.nama,')') as akses FROM pendaftaran INNER JOIN kewarganegaraan ON pendaftaran.id_negara = kewarganegaraan.id_negara JOIN user ON pendaftaran.id_user = user.id_user JOIN agama ON pendaftaran.id_agama = agama.id_agama JOIN jurusan ON pendaftaran.id_jurusan = jurusan.id_jurusan JOIN jenjang ON jurusan.id_jenjang = jenjang.id_jenjang WHERE nis='" . $_GET['nis'] . "'");
             $edit = mysqli_fetch_assoc($data);
             ?>
         <div class="main-panel">
@@ -99,47 +95,123 @@
                     <p class="card-description">Mohon isi</p>
                     <form class="forms-sample" action="" method="post" >
                       <div class="form-group">
-                        <label for="exampleInputName1">ID jurusan</label>
-                        <input type="text" name="id_jurusan" class="form-control" id="id_jurusan" placeholder="ID jurusan" value="<?= $edit['id_jurusan']; ?>" readonly>
+                        <label for="exampleInputName1">NIS</label>
+                        <input type="text" name="id_jurusan" class="form-control" id="nis" placeholder="ID jurusan" value="<?= $edit['nis']; ?>" readonly>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Nama jurusan</label>
-                        <input type="text" class="form-control" name="nama_jurusan" id="nama_jurusan" placeholder="Nama jurusan" required value="<?= $edit['nama_jurusan']; ?>">
-                      </div>
-                      <div class="form-group mb-3">
-                      <label>Jenjang</label>
-                      <select class="js-example-basic-single" style="width:100%" name="id_jenjang" id="id_jenjang">
-                      <option value="<?= $edit['id_jenjang'] ?>"><?= $edit['nama_jenjang'] ?></option>
-                        
-                        <?php
-                        $sql = mysqli_query($conn, "SELECT * FROM jenjang");
-                        while ($data = mysqli_fetch_assoc($sql)) {
-                        ?>
-                            <option value="<?= $data['id_jenjang'] ?>"><?= $data['nama_jenjang'] ?></option>
-                        <?php
-                        }
-                        ?>
-                      </select>
-                        </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">User Update</label>
-                        <input type="text" class="form-control" name="user_update" id="user_update" placeholder="User Update" required value="<?= $edit['user_input']; ?>">
+                        <label for="exampleInputName1">Nama Siswa</label>
+                        <input type="text" class="form-control" name="nama_jurusan" id="nama_siswa" placeholder="Nama Siswa" value="<?= $edit['nama_siswa']; ?>" required>
                       </div>
                       <div class="form-group">
-                      <label>Akses User</label>
-                      <select class="js-example-basic-single" style="width:100%" name="id_user" id="id_user">
-                      
-                      <option value="<?= $edit['id_user'] ?>"><?= $edit['akses'] ?> (<?= $edit['nama'] ?>)</option>
-                      <?php
-                      $sql = mysqli_query($conn, "SELECT * FROM user WHERE akses = '$status' AND id_user='$_SESSION[id_user];'");
-                      while ($data = mysqli_fetch_assoc($sql)) {
-                      ?>
-                          <option value="<?= $data['id_user'] ?>"><?= $data['akses'] ?> (<?= $data['nama'] ?>)</option>
-                      <?php
-                      }
-                      ?>
-                      </select>
-                    </div>
+                        <label for="exampleInputName1">Alamat</label>
+                        <textarea type="text" class="form-control" name="alamat" required="required" id="alamat" placeholder="Alamat" value="<?= $edit['nama_siswa']; ?>" required="required"><?= $edit['alamat']; ?></textarea>
+                      </div>
+                      <div class="form-group">
+                                <label class="col-form-label">Jenis Kelamin</label>
+                                <br>
+                                <?php if (
+                                    $edit['jenis_kelamin'] ==
+                                    'Laki-laki'
+                                ) { ?>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="jk1" name="jk" class="custom-control-input" value="Laki-laki" checked>
+                                        <label class="custom-control-label" for="jk1">Laki - Laki</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="jk2" name="jk" class="custom-control-input" value="Perempuan">
+                                        <label class="custom-control-label" for="jk2">Perempuan</label>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="jk1" name="jk" class="custom-control-input" value="Laki-laki">
+                                        <label class="custom-control-label" for="jk1">Laki - Laki</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="jk2" name="jk" class="custom-control-input" value="Perempuan" checked>
+                                        <label class="custom-control-label" for="jk2">Perempuan</label>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Tempat Lahir</label>
+                        <input type="text" class="form-control" id="tmp_lahir" name="tmp_lahir" placeholder="Tempat Lahir" value="<?= $edit['tempat_lahir']; ?>" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir"  value="<?= $edit['tgl_lahir']; ?>" required>
+                      </div>
+                      <div class="form-group">
+                                <label>Status</label>
+                                <select class="form-control" name="status" id="status">
+                                    <option value="<?= $edit['status']; ?>"><?= $edit['status']; ?></option>
+                                    <option value="Baru">Baru</option>
+                                    <option value="Pindahan">Pindahan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Negara</label>
+                                <select class="form-control" name="negara" id="negara">
+                                <option value="<?= $edit['id_negara']; ?>"><?= $edit['nama_negara']; ?></option>
+                                    <?php
+                                    $sql = mysqli_query($conn, "SELECT * FROM kewarganegaraan");
+                                    while ($data = mysqli_fetch_assoc($sql)) {
+                                    ?>
+                                        <option value="<?= $data['id_negara'] ?>"><?= $data['nama_negara'] ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Agama</label>
+                                <select class="form-control" name="agama" id="agama">
+                                <option value="<?= $edit['id_agama']; ?>"><?= $edit['nama_agama']; ?></option>
+                                    <?php
+                                    $sql = mysqli_query($conn, "SELECT * FROM agama");
+                                    while ($data = mysqli_fetch_assoc($sql)) {
+                                    ?>
+                                        <option value="<?= $data['id_agama'] ?>"><?= $data['nama_agama'] ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Kelas</label>
+                                <select class="form-control" name="kelas" id="kelas">
+                                <option value="<?= $edit['id_jurusan'] ?>"><?= $edit['kelas'] ?></option>
+                                    <?php
+                                    $sql = mysqli_query($conn, "SELECT jurusan.id_jurusan, CONCAT(jenjang.nama_jenjang,' ',jurusan.nama_jurusan) AS kelas FROM jurusan INNER JOIN jenjang ON jurusan.id_jenjang = jenjang.id_jenjang");
+                                    while ($data = mysqli_fetch_assoc($sql)) {
+                                    ?>
+                                        <option value="<?= $data['id_jurusan'] ?>"><?= $data['kelas'] ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Tanggal Update</label>
+                                <input type="date" class="form-control form-control-user" id="tgl_update" name="tgl_update" required>
+                            </div>
+                            <div class="form-group">
+                            <label class="col-form-label">User_Input</label>
+                                <input type="text" class="form-control form-control-user" id="user_input" name="user_input" placeholder="User Input" value="<?= $edit['user_input']; ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Akses User</label>
+                                <select class="form-control" name="id_user" id="id_user">
+                                <option value="<?= $edit['id_user']; ?>"><?= $edit['akses']; ?></option>
+                                    <?php
+                                    $sql = mysqli_query($conn, "SELECT * FROM user WHERE akses = '$status' AND id_user='$_SESSION[id_user];'");
+                                    while ($data = mysqli_fetch_assoc($sql)) {
+                                    ?>
+                                        <option value="<?= $data['id_user'] ?>"><?= $data['akses'] ?> (<?= $data['nama'] ?>)</option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>         
                       <button type="submit" name="simpan" class="btn btn-primary mr-2">Update</button>
                       <button type="reset" class="btn btn-dark">Cancel</button>
                     </form>

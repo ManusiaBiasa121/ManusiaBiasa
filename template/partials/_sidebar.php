@@ -158,8 +158,8 @@ if (!isset($_SESSION['login'])) {
           </a>
           <div class="collapse" id="pendaftaran">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="form_pendaftaran.php">Form Pendaftaran</a></li>
               <li class="nav-item"> <a class="nav-link" href="data_pendaftaran.php">Data Pendaftaran</a></li>
+              <li class="nav-item"> <a class="nav-link" href="form_pendaftaran.php">Form Pendaftaran</a></li>
             </ul>
           </div>
         </li>
@@ -190,7 +190,7 @@ if (!isset($_SESSION['login'])) {
             <span class="menu-title">Log Out</span>
           </a>
         </li>
-        <br>
+        <!-- <br>
         <br>
         <br>
         <br>
@@ -277,7 +277,7 @@ if (!isset($_SESSION['login'])) {
             <span class="menu-title">Documentation</span>
           </a>
         </li>
-      </ul>
+      </ul> -->
     </nav>
   </div>
 <!-- container-scroller -->

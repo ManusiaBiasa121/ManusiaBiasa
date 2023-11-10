@@ -11,7 +11,7 @@ setcookie('key', '', time() - 3600);
 echo "
     <script>
         alert('Log Out Sukses!');
-        document.location.href='TerPut.html';
+        document.location.href='index.php';
     </script>
     ";
 ?>

@@ -384,7 +384,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <button class="preview-subject mb-1" href="../TerPut.html">Log out</button>
+                      <button class="preview-subject mb-1" href="../index.php">Log out</button>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
